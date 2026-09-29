@@ -22,6 +22,7 @@
 
 @REM Set the current directory to the location of this script
 set MAVEN_PROJECTBASEDIR=%~dp0
+if "%MAVEN_PROJECTBASEDIR:~-1%"=="\" set MAVEN_PROJECTBASEDIR=%MAVEN_PROJECTBASEDIR:~0,-1%
 
 @REM Find java.exe
 if defined JAVA_HOME goto findJavaFromJavaHome
@@ -66,6 +67,7 @@ if %ERRORLEVEL% neq 0 (
 set WRAPPER_LAUNCHER=org.apache.maven.wrapper.MavenWrapperMain
 
 "%JAVA_EXE%" ^
+  "-Dmaven.multiModuleProjectDirectory=%MAVEN_PROJECTBASEDIR%" ^
   %MAVEN_OPTS% ^
   -classpath %WRAPPER_JAR% ^
   %WRAPPER_LAUNCHER% %*

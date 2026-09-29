@@ -19,6 +19,7 @@ import java.util.Map;
 import java.util.stream.Collectors;
 
 @Service
+@Transactional
 public class TicketService {
 
     private final TicketRepository ticketRepository;
